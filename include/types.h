@@ -1,0 +1,11 @@
+//
+// Created by User on 10/11/2025.
+//
+
+#ifndef TERMINATED_BY_C_TYPES_H
+#define TERMINATED_BY_C_TYPES_H
+
+#define CHARACTER_NAME_LENGTH_MAX 16
+#define INPUT_BUFFER_SIZE 1024
+
+#endif //TERMINATED_BY_C_TYPES_H

@@ -1,0 +1,3 @@
+C:/Users/User/CLionProjects/terminated_by_c/build_Debug/CMakeFiles/terminated_by_c.dir
+C:/Users/User/CLionProjects/terminated_by_c/build_Debug/CMakeFiles/edit_cache.dir
+C:/Users/User/CLionProjects/terminated_by_c/build_Debug/CMakeFiles/rebuild_cache.dir
