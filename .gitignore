@@ -15,6 +15,7 @@
 
 # Build directories
 build/
+build_*/
 bin/
 
 # CMake generated files
