@@ -1,0 +1,8 @@
+//
+// Created by User on 10/18/2025.
+//
+
+#ifndef TERMINATED_BY_C_SDL_RENDERER_H
+#define TERMINATED_BY_C_SDL_RENDERER_H
+
+#endif //TERMINATED_BY_C_SDL_RENDERER_H

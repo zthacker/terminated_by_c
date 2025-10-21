@@ -6,7 +6,7 @@
 #define TERMINATED_BY_C_LOADER_H
 
 #include "../character/character.h"
-#include "../include/utils/cJSON.h"
+#include "../../external/cJSON/cJSON.h"
 
 character_t* load_character_from_json(const char* file_path);
 

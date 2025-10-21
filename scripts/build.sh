@@ -19,12 +19,14 @@ mkdir -p "$BUILD_DIR"
 cd "$BUILD_DIR"
 
 # Configure
-cmake -G "$GENERATOR" -DCMAKE_C_COMPILER="$COMPILER" -DCMAKE_BUILD_TYPE="$BUILD_TYPE" ..
+echo "📝 Configuring CMake..."
+cmake -G "$GENERATOR" -DCMAKE_C_COMPILER="$COMPILER" -DCMAKE_BUILD_TYPE="$BUILD_TYPE" .. 2>&1 | tee cmake_config.log
 
-# Build
-cmake --build .
+# Build with verbose output
+echo "🔨 Building..."
+cmake --build . --verbose 2>&1 | tee cmake_build.log
 
-# Figure out where the executable is
+# Check if executable exists
 EXE_PATH=""
 case "$BUILD_TYPE" in
     Debug) EXE_PATH="../bin/Debug/terminated_by_c.exe" ;;
@@ -33,5 +35,11 @@ case "$BUILD_TYPE" in
     MinSizeRel) EXE_PATH="../bin/MinSizeRel/terminated_by_c.exe" ;;
 esac
 
-echo "✅ Build complete."
-echo "Executable located at: $(realpath $EXE_PATH)"
+if [ -f "$EXE_PATH" ]; then
+    echo "✅ Build complete."
+    echo "Executable located at: $(realpath $EXE_PATH)"
+else
+    echo "❌ Build FAILED - executable not found at: $EXE_PATH"
+    echo "Check cmake_build.log for errors"
+    exit 1
+fi
